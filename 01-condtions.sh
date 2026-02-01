@@ -3,5 +3,5 @@
 PERSON1=Rakesh
 PERSON2=Yeswanth
 
-echo "$person1:: Hello $person2, how are you?"
-ECHO "$person2:: Hey $person1, I am good"
+echo "$PERSON1:: Hello $PERSON2, how are you?"
+echo "$PERSON2:: Hey $PERSON1, I am good"
