@@ -1,11 +1,7 @@
 #!/bin/bash
 
-NUMBER=$1
+PERSON1=$1
+PERSON2=$2
 
-if [ $NUMBER -gt 20 ]; then
-    echo "Given number is greater than 20"
-elif [ $NUMBER -eq 20 ]; then
-    echo "Given number is equal to 20"
-else
-    echo "Given number is less than 20"
-fi
+echo "$PERSON1:: Hello $PERSON2, how are you?"
+echo "$PERSON2:: Hey $PERSON1, I am good"
