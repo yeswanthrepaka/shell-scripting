@@ -9,15 +9,15 @@ B="\e[34m"
 N="\e[0m"
 
 if [ $USERID -ne 0 ]; then
-    echo "$R Please run the script with sudo user $N"
+    echo -e "$R Please run the script with sudo user $N"
     exit 1
 fi
 
 VALIDATE(){
     if [ $1 -ne 0 ]; then
-        echo "$2... $R FAILURE $N"
+        echo -e "$2... $R FAILURE $N"
     else
-        echo "$2... $G SUCCESS $N"
+        echo -e "$2... $G SUCCESS $N"
     fi
 }
 
@@ -25,10 +25,10 @@ for package in $@
     do
         dnf list installed $package
         if [ $? -ne 0 ]; then
-            echo "$R $package not installed... Now installing $N"
+            echo -e "$R $package not installed... Now installing $N"
             dnf install $package -y
             VALIDATE $? "Installing $package"
         else
-            echo "$Y $package already installed... SKIPPING $N"
+            echo -e "$Y $package already installed... SKIPPING $N"
         fi
     done
