@@ -12,6 +12,7 @@ VALIDATE(){
         echo "Installing nginx... FAILURE"
     else
         echo "Installing nginx... SUCCESS"
+    fi
 }
 
 dnf install nginx -y
