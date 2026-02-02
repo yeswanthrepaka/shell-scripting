@@ -8,12 +8,18 @@ if [ $USERID -ne 0 ]; then
 fi
 
 VALIDATE(){
-    if [ $? -ne 0 ]; then
-        echo "Installing nginx... FAILURE"
+    if [ $1 -ne 0 ]; then
+        echo "$2... FAILURE"
     else
-        echo "Installing nginx... SUCCESS"
+        echo "$2... SUCCESS"
     fi
 }
 
 dnf install nginx -y
-VALIDATE
+VALIDATE $? "Installing nginx"
+
+dnf install mysql -y
+VALIDATE $? "Installing mysql"
+
+dnf install nodejs -y
+VALIDATE $? "Installing nodejs"
