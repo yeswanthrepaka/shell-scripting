@@ -11,6 +11,8 @@ Y="\e[33m"
 B="\e[34m"
 N="\e[0m"
 
+mkdir -p $LOGS_FOLDER
+
 if [ $USERID -ne 0 ]; then
     echo -e "$R Please run the script with sudo user $N"
     exit 1
