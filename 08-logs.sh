@@ -29,10 +29,10 @@ VALIDATE(){
 
 for package in $@
     do
-        dnf list installed $package &>>$LOGS_FILE
+        dnf list installed $package | tee -a $LOGS_FILE
         if [ $? -ne 0 ]; then
             echo -e "$R $package not installed... Now installing $N"
-            dnf install $package -y &>>$LOGS_FILE
+            dnf install $package -y | tee -a $LOGS_FILE
             VALIDATE $? "Installing $package"
         else
             echo -e "$Y $package already installed... SKIPPING $N"
