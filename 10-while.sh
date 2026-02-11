@@ -3,4 +3,4 @@
 while IFS=read -r line; 
 do
     echo "$line"
-done < 09.while.sh
+done < 09-while.sh
