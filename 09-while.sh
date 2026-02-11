@@ -8,5 +8,3 @@ do
     sleep 1
     ((count++))
 done
-
-# Sample line
