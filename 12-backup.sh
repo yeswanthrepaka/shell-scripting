@@ -8,6 +8,8 @@ DEST_DIR=$2
 DAYS=${3:-14} #Default 14 days if not given
 USERID=$(id -u)
 
+mkdir -p $LOGS_FOLDER
+
 usage(){
     echo "Minimum two args <source> <dest> <days- if not given it will take default 14>"
 }
