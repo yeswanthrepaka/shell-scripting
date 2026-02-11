@@ -27,8 +27,9 @@ if [ ! -d $DEST_DIR ]; then
     exit 1
 fi
 
+TIME=$(date +%F-%H-%M-%S)
 FILE_FIND=$(find $SOURCE_DIR -type f -mtime +$DAYS)
-ZIP_FILE_NAME="$DEST_DIR/backup.tar.gz"
+ZIP_FILE_NAME="$DEST_DIR/backup-$TIME.tar.gz"
 
 if [ -z "{$FILE_FIND}" ]; then
     echo "$FILE_FIND is empty"
