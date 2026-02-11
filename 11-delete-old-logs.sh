@@ -8,7 +8,7 @@ if [ ! -d $LOGS_FOLDER ]; then
     exit 1
 fi
 
-FILES_TO_DELETE=$(find $LOGS_FOLDER -name *.logs -mtime +14)
+FILES_TO_DELETE=$(find $LOGS_FOLDER -name *.logs -mtime -14)
 
 if [ -z $FILES_TO_DELETE ]; then
     echo "Empty folder"
