@@ -30,7 +30,7 @@ fi
 FILE_FIND=$(find $SOURCE_DIR -type f -mtime +$DAYS)
 ZIP_FILE_NAME="backup.tar.gz"
 
-if [ -z $FILE_FIND ]; then
+if [ -z "{$FILE_FIND}" ]; then
     echo "$FILE_FIND is empty"
 else
     tar -zcvf $ZIP_FILE_NAME $FILE_FIND
