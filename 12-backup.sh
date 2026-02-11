@@ -12,7 +12,7 @@ usage(){
     echo "Minimum two args <source> <dest> <days- if not given it will take default 14>"
 }
 
-if [ $# -lt 2 ]; then
+if [ $# -lt 2 ]; then &>>$LOGS_FILE
     usage
     exit 1
 fi
