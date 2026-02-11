@@ -1,20 +1,15 @@
 #!/bin/bash
 
-LOGS_FOLDER="/var/log/shell-scrips"
-LOGS_FILE="/var/log/shell-scrips/backup.log"
-
 SOURCE_DIR=$1
 DEST_DIR=$2
 DAYS=${3:-14} #Default 14 days if not given
 USERID=$(id -u)
 
-mkdir -p $LOGS_FOLDER
-
 usage(){
     echo "Minimum two args <source> <dest> <days- if not given it will take default 14>"
 }
 
-if [ $# -lt 2 ]; then &>>$LOGS_FILE
+if [ $# -lt 2 ]; then 
     usage
     exit 1
 fi
