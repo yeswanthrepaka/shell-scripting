@@ -5,7 +5,7 @@ LOGS_FILE="/var/log/shell-scrips/backup.log"
 
 SOURCE_DIR=$1
 DEST_DIR=$2
-DAYS=$(3:-14) #Default 14 days if not given
+DAYS=${3:-14} #Default 14 days if not given
 USERID=$(id -u)
 
 usage(){
