@@ -28,13 +28,15 @@ if [ ! -d $DEST_DIR ]; then
 fi
 
 TIME=$(date +%F-%H-%M-%S)
-FILE_FIND=$(find $SOURCE_DIR -type f -mtime -$DAYS)
+FILE_FIND=$(find $SOURCE_DIR -type f -mtime +$DAYS)
 ZIP_FILE_NAME="$DEST_DIR/backup-$TIME.tar.gz"
 
 if [ -z "{$FILE_FIND}" ]; then
     echo "$FILE_FIND is empty"
 else
     tar -zcvf $ZIP_FILE_NAME $FILE_FIND
+    echo "Source directory : $SOURCE_DIR"
+    echo "Destination directory : $DEST_DIR"
+    echo "Days : $DAYS"
     echo "ZIP process comleted"
 fi
-
